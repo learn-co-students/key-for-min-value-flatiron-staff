@@ -2,7 +2,18 @@
 # Given a hash with numeric values, return the key for the smallest value
 
 def key_for_min_value(name_hash)
-  name_hash.each do |name, value|
-    value
+  lowest_key = nil
+  lowest_value = Float::INFINITY
+  name_hash.each do |key, value|
+    if value < lowest_value
+      lowest_value = value
+      lowest_key = key
+      puts "#{key}"
+    else
+      puts nil
+    end
   end
+  lowest_key
 end
+
+#this lab had no apparent answer for the skills I have learned thus far, so I relied on a blog post about this difficult lab to solve this
